@@ -4,21 +4,25 @@
 <meta charset="utf-8"/>
 	<title>Shiiro</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	
-	<!-- Latest compiled and minified CSS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
 <!-- Optional theme -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
+
+    
+    <script type="text/javascript" src="fancybox/source/jquery.fancybox.pack.js"></script>
+    <link rel="stylesheet" href="fancybox/source/jquery.fancybox.css" type="text/css" media="screen" />
+
+ 
 </head>
 <body>	
 <div class="container">
 <div class ="row">
-<div id="logo"class ="col-lg-3"><img src="images/head.png"/></div>
+<div id="logo" class="col-lg-3"><img src="images/head.png"/></div>
 </div>
 <div class="table-responsive">
   <table class="table">
@@ -31,8 +35,25 @@
   </tr>
   </table>
 </div>
-<div class="col-lg-8 col-centered">
-<img src="images/Shiiro_Logo_CMYK.png"/>
+<div class="col-lg-12 col-centered">
+<div class="col-lg-4 sameSize">
+
+  <img src="images/illustration/9. Find hacker in ip Wallpaper.png"/>
+
+</div>
+
+<div class="col-lg-4 sameSize">
+
+  <img src="images/illustration/9. Find hacker in ip Wallpaper.png"/>
+
+</div>
+
+<div class="col-lg-4 sameSize">
+
+<img src="images/illustration/Unbenannt.png"/>
+
+</div>
+
 </div>
 <div class="col-lg-3 col-centered">
 socialmedia logos
@@ -41,5 +62,46 @@ socialmedia logos
 <p>All content by Marie Faber 2017 | shiiroillustration@outlook.de</p>
 </div>
 </div>
+
+<script type="text/javascript">
+
+    $(function($){
+
+        var addToAll = true;
+
+        var gallery = true;
+
+        var titlePosition = 'inside';
+
+        $(addToAll ? 'img' : 'img.fancybox').each(function(){
+
+            var $this = $(this);
+
+            var title = $this.attr('title');
+
+            var src = $this.attr('data-big') || $this.attr('src');
+
+            var a = $('<a href="#" class="fancybox"></a>').attr('href', src).attr('title', title);
+
+            $this.wrap(a);
+
+        });
+
+        if (gallery)
+
+            $('a.fancybox').attr('rel', 'fancyboxgallery');
+
+        $('a.fancybox').fancybox({
+
+            titlePosition: titlePosition
+
+        });
+
+    });
+
+    $.noConflict();
+
+</script>
 </body>
 </html>
+
